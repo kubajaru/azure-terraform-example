@@ -11,6 +11,12 @@ variable "resource_group_location" {
   default     = null
 }
 
+variable "environment" {
+  type        = string
+  description = "General variable controlling diferent settings besed on environment"
+  default     = null
+}
+
 #---------------------------------------#
 
 #------------ VIRTUAL NETWORK ----------#

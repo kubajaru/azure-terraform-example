@@ -17,6 +17,11 @@ resource "azurerm_virtual_network" "main" {
     id     = azurerm_network_ddos_protection_plan.main.id
     enable = var.ddos_pp_enabled
   }
+
+  tags = {
+    "provisioner" = "Terraform"
+    "environment" = var.environment
+  }
 }
 
 resource "azurerm_virtual_network" "hub" {
@@ -30,6 +35,11 @@ resource "azurerm_virtual_network" "hub" {
   ddos_protection_plan {
     id     = azurerm_network_ddos_protection_plan.main.id
     enable = var.ddos_pp_enabled
+  }
+
+  tags = {
+    "provisioner" = "Terraform"
+    "environment" = var.environment
   }
 }
 
